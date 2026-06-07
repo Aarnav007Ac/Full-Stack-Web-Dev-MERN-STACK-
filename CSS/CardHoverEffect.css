@@ -1,0 +1,28 @@
+.card{
+    width: 200px;
+    height: auto;
+    /* here we used height:auto so that the element becomes as tall as needed to fit everything inside it. */
+    /* if we use height here then only our image covers that with the border */
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px black;
+    transition: box-shadow 0.3s ease 0.1s;
+}
+
+img{
+    width: 100%;
+    /* the upper borders of the image didn't curve so we need to give them border radius as well */
+    border-radius: 5px 5px 0 0;
+}
+
+/* now we add a lil padding to the desc as the contents are too much to the left border */
+
+.desc{
+    padding: 0 2px;
+}
+
+.card:hover{
+    box-shadow: 4px 8px 16px goldenrod;
+}

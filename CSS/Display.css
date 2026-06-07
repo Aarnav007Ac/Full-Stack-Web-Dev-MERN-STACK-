@@ -1,0 +1,21 @@
+span{
+    /* background-color: pink; */
+    border: 2px solid black;
+    height: 100px;
+    /* Browser ignored this height */
+    width: 700px;
+    /* Browser ignored this width as well */
+    padding: 50px;
+    /* padding got implemented, but only on the left and right sides not above and below. */
+    margin: 20px;
+    /* margin also got implemented but only on the left and right and not above and below.  */
+}
+
+div{
+    border: 2px solid black;
+    height: 100px;
+    width: 700px;
+    padding: 50px;
+    margin: 20px;
+    
+}

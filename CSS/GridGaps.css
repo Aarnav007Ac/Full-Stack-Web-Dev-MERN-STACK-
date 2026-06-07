@@ -1,0 +1,24 @@
+.container{
+    width: 600px;
+    height: 300px;
+    background-color: red;
+    /* display: flex; */
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
+    /* row-gap: 10px;
+    column-gap: 30px; */
+    
+    /* Alternative Method */
+    grid-gap: 10px 30px;
+    /* If we only write 10px for grid gap then we get 10px for both row and column gap  */
+}
+
+.item{
+    /* width: 100px;
+    height: 50px; */
+    /* We comment out height and width when we want the items to occupy the complete cell area.  */
+    background-color: greenyellow;
+    border: 2px solid black;
+    text-align: center;
+}

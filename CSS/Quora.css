@@ -1,0 +1,127 @@
+h3{
+background-color: grey !important;
+}
+
+*{
+font-family: 'Courier New';
+}
+
+h1,h3{
+    color: #b92b27;
+}
+
+#login{
+    background-color: white;
+}
+
+#signup{
+    background-color: #b92b27;
+    color: white;
+}
+
+.upvote{
+    background-color: bisque;
+}
+
+/* .follow{
+    text-decoration: wavy red underline;
+    color: blue;
+} */
+
+/* .answer{
+    background-color: aquamarine;
+} */
+
+/* descendant selector */
+.post a{
+    color: purple;
+    text-decoration: none;
+    background-color: yellow;
+}
+
+nav li{
+    color: hotpink;
+}
+
+nav a{
+    color: rgb(49, 177, 134);
+    text-decoration: none;
+}
+
+            /* Adjacent sibling combinator */
+/* All h3 headings after p. */
+p + h3{
+    text-decoration:  dotted underline;
+}
+
+/* All the buttons after the +upvote button. */
+.upvote + button{
+    background-color: aquamarine;
+}
+
+/* Child combinator */
+/* div > input{
+    background-color: beige;
+} */
+
+/* attribute selector */
+input[type="text"]{
+    color: red;
+}
+
+input[type="password"]{
+    color: green;
+}
+
+input[type]{
+    background-color: goldenrod;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+h3:hover{
+    text-decoration: none;
+}
+
+button:active{
+    background-color: hotpink;
+    color: black;
+}
+
+/* This is for the names like Adam,Bob etc. */
+p:active{
+    font-weight: 800;
+    color: green;
+}
+
+/* Here we used sibling combinator on checked pseudo class as the color of the label was not changing */
+input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+}
+
+div:nth-of-type(2n){
+    background-color:blanchedalmond;
+}
+
+h1::first-letter{
+    color: black;
+}
+
+div[id="myId"] p::first-line{
+    color: green;
+}
+p::selection{
+    background-color: lime;
+}
+
+/* Cascading property */
+h3{
+    background-color: black;
+}
+h3{
+    background-color: aqua;
+}

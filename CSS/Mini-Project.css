@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* This is done to get a clean slate i.e. remove any default margin and padding applied by the browser. --> */
+    
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main_box{
+    background: url("SideBarMenuPhoto.jpg") ;
+    height: 100vh;
+    /* Setting height: 100vh; makes the element's height equal to exactly 100% of the visible browser window (viewport) height. */
+    background-size: cover;
+}
+
+.btn_one{
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    /* The position was set  w.r.t the entire doc as no position was defined for .main_box */
+    /* Why was it used?
+     1. Removal from Document Flow: By setting position: absolute, the hamburger toggle button is taken out of the normal document layout flow. It no longer occupies space in the page layout, allowing other elements (like the sidebar logo or main text) to position themselves without being pushed down or sideways by the button.
+     2. Precise Placement: It allows the button to be placed at a precise location on the screen (e.g., left: 16px) relative to its nearest positioned ancestor. */
+    left: 16px;
+    line-height: 60px;
+    /* border: 2px solid red; */
+    /* We can see the line height is working by just giving it a border and for the part that it is overallping with "Apna College" it is due to the position absolute */
+}
+
+.sidebar_menu{
+    position: fixed;
+    /* Why was it used?
+    1. Viewport-relative Positioning: Unlike absolute positioning (which is relative to its nearest positioned ancestor or the document root), a fixed element is positioned relative to the browser viewport (the screen itself).
+    2. Locked Position During Scrolling: A sidebar menu is expected to stay accessible at all times. Using position: fixed locks the sidebar in place. Even if the user scrolls down a long page, the sidebar will remain fixed in its position on the screen. */
+
+    left: -350px;
+    /* Doing the this pushes it oustide the screen. So first we make changes and then uncomment it. Till we don't the menu parts it stays commented out */
+
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+
+    transition: all 0.3s linear;
+    /* all: Smoothly animate every CSS property of .sidebar_menu that changes (in your project, this is mainly the left property when it slides in/out).
+    Without transition (instant jump): If you change .sidebar_menu from left: -350px to left: 0, the sidebar will instantly pop onto the screen in a split second.
+    With transition: all 0.2s linear; (smooth animation): The browser will calculate the frames in between and make the sidebar slide smoothly across the screen over 0.2 seconds. */
+}
+
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    /* This is used for the text 'Apna College' to be in the middle of the height of the btn_one */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    /* The box shadow effect isn't applying as the div doesn't have any content so it doesn't have any height so we give it some height.
+    The .logo div does have content (the <a> link), but because that link has position: absolute; on line 62, it is taken completely out of the document flow.
+    When a parent div only contains absolutely positioned children, the parent behaves as if it is empty and its height collapses to 0px. Because the height is 0px, the box shadow does not render around a 60px header block as you expect. */
+    height: 60px;
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    /* This absolute is in relation to it's parent i.e. .logo. */
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two{
+    position: absolute;
+    left: 265px;
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+}
+
+.sidebar_menu .menu{
+    position: absolute;
+    /* When you set position: absolute; on an element, it is removed from the normal document flow.By applying position: absolute;, both .logo and .menu are taken out of the normal layout flow. The browser behaves as if they occupy zero height and zero space within the parent .sidebar_menu container. Since .btn_two and .social_media are the only elements left in the normal document flow, social_media flows directly underneath .btn_two near the top of the container. */
+    width: 100%;
+    top: 80px;
+    color: white;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding:14px 20px ;
+}
+
+.sidebar_menu .menu i,a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i{
+    padding-right: 10px;
+    
+    /* This is done so as to leave some space between the icons and the text. For an inline element like an icon (<i>), both padding-right and margin-right will look visually identical by pushing the text 10px to the right. However, they behave differently under the hood:
+    1. Click/Tap Target Size: Padding increases the actual "hitbox" of the icon. If you click on the 10px space between the icon and the text: With padding, that space is part of the icon. With margin, that space is empty air.  */
+}
+
+.sidebar_menu .social_media{
+    position: absolute;
+    /* Position absolute is relative to the parent. Parent of .social_media is .sidebar_menu */
+    left: 25%;
+    bottom: 50px;
+}
+
+.sidebar_menu .social_media i{
+    color: white;
+    opacity: 0.5;
+    padding: 0 5px;
+}
+
+#check{
+    display: none;
+    /* If display none is set for any element the element is removed and doesn't create space for itself. All the other elements are pushed upwards. */
+}
+
+
+/* Now, we want to give box shadow to the list items when we hover on them. */
+.sidebar_menu .menu li:hover{
+    box-shadow: 0 0  4px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover{
+    font-size: 40px;
+    cursor: pointer;
+    /* We won't see any changes here as there are two layers of elements , the sidebar menu is the upper layer and the btn_one is the lower layer. Since .sidebar_menu comes after .btn_one in the HTML, it is rendered on top. If we want to see changes we can make the z-index of btn_one greater than that of .sidebar_menu */
+    transition: all 0.3s linear;
+}
+
+.btn_two i:hover{
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+#check:checked ~ .sidebar_menu{
+    /* The checkbox gets checked or unchecked when the hamburger icon and the cross icon are clicked upon. */
+    
+    /*  Now we have the sidebar menu to the left: -350px so to show it we have to */
+    left: 0;   
+}
+
+#check:checked ~ .btn_one i {
+    opacity: 0;
+}
+

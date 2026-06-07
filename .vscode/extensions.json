@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "adamraichu.pdf-viewer",
+    "esbenp.prettier-vscode",
+    "formulahendry.code-runner",
+    "github.copilot-chat",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.cpp-devtools",
+    "ms-vscode.cpptools",
+    "ms-vscode.cpptools-extension-pack",
+    "ms-vscode.cpptools-themes",
+    "ms-vscode.remote-explorer",
+    "ms-vscode.remote-server",
+    "openai.chatgpt",
+    "pkief.material-icon-theme",
+    "ritwickdey.liveserver",
+    "twxs.cmake",
+    "whizkydee.material-palenight-theme"
+  ]
+}

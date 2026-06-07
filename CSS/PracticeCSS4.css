@@ -1,0 +1,13 @@
+/* M - 1 */
+/* #myId  p{
+    color: green;
+} */
+
+/* M - 2 */
+div[id="myId"] p{
+    color: green;
+}
+
+
+
+
