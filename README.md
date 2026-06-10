@@ -2,6 +2,9 @@
 
 Welcome! This repository documents my step-by-step journey to mastering Full-Stack Development (MERN Stack). 
 
+> [!NOTE]
+> **This is a live, ongoing learning journey!** I am actively learning and building in real-time, which means new concepts, files, and projects will be constantly added as I progress through the stack. 
+
 The goal of this repository is to break down complex web development concepts into highly clean, structured, and easy-to-understand codebase. Each directory contains practice files, conceptual notes in comments, clone layouts, and assignments designed to help anyone learn along with me!
 
 ---
