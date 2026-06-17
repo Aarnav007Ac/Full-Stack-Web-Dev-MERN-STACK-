@@ -1,0 +1,5 @@
+body{
+    padding-top: 70px;
+    /* This was done so that that the heading becomes visible when
+    the navbar is fixed to the top of the page. */
+}
